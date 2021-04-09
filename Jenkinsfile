@@ -8,12 +8,6 @@ pipeline {
   }
   agent any
   stages {
-    stage('Cloning Git') {
-      steps {
-        //git([url: ', branch: 'master'])
-        sh 'Checkout'
-      }
-    }
     stage('Building image') {
       steps{
         script {
