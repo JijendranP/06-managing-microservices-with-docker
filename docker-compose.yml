@@ -2,7 +2,7 @@ version: "3"
 
 services:
   vote:
-    build: ./vote
+    image: jijendran/vote
     command: python app.py
     volumes:
      - ./vote:/app
@@ -13,7 +13,7 @@ services:
       - back-tier
 
   result:
-    build: ./result
+    image: jijendran/result
     command: nodemon --debug server.js
     volumes:
       - ./result:/app
@@ -24,7 +24,7 @@ services:
       - back-tier
 
   worker:
-    build: ./worker
+    image: jijendran/worker
     networks:
       - back-tier
 

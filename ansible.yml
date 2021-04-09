@@ -1,0 +1,9 @@
+---
+- hosts: all
+  become: true
+  tasks:
+    - name: Copy ansible script
+      copy: src=ansible-deploy.sh dest=/root mode=0777
+
+    - name: Deploy the application
+      command: sh /root/ansible-deploy.sh
